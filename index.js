@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 import request from 'request-promise';
 import getStdin from 'get-stdin';
 import meow from 'meow';
