@@ -1,6 +1,6 @@
 {
   "name": "github-commenter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Comment on the pull request with the value received from stdin.",
   "main": "./lib/index.js",
   "scripts": {
