@@ -2,10 +2,13 @@
   "name": "github-commenter",
   "version": "0.1.0",
   "description": "Comment on the pull request with the value received from stdin.",
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel index.js -o lib/index.js"
+  },
+  "bin": {
+    "github-commenter": "./lib/index.js"
   },
   "files": [
     "lib"
