@@ -1,4 +1,8 @@
 # github-commenter
+[![npm](https://img.shields.io/npm/v/github-commenter.svg)](https://www.npmjs.com/package/github-commenter)
+[![npm](https://img.shields.io/npm/dt/github-commenter.svg)](https://www.npmjs.com/package/github-commenter)
+[![npm](https://img.shields.io/npm/l/github-commenter.svg)](https://www.npmjs.com/package/github-commenter)
+
 Comment on the pull request with the value received from stdin on Circle CI.
 
 ##  Install
