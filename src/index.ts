@@ -1,17 +1,17 @@
 #! /usr/bin/env node
 
-import request from 'request-promise';
-import getStdin from 'get-stdin';
-import meow from 'meow';
+import * as request from 'request-promise';
+import * as getStdin from 'get-stdin';
+import * as meow from 'meow';
 
-const CIRCLECI = process.env.CIRCLECI || false;
+const CIRCLECI = process.env.CIRCLECI || '';
 const CI_PULL_REQUEST = process.env.CI_PULL_REQUEST || '';
 const GITHUB_COMMENTER_API_TOKEN = process.env.GITHUB_COMMENTER_API_TOKEN || '';
 const GITHUB_COMMENTER_API_URL = process.env.GITHUB_COMMENTER_API_URL || 'api.github.com';
 const CIRCLE_PROJECT_REPONAME = process.env.CIRCLE_PROJECT_REPONAME || '';
 const CIRCLE_PROJECT_USERNAME = process.env.CIRCLE_PROJECT_USERNAME || '';
 
-function getPullRequestNumber(url) {
+function getPullRequestNumber(url: string): string {
   if (url.match(/pull\/([0-9]+)/)) {
     const result = url.match(/pull\/([0-9]+)/);
     return result[1];
@@ -20,7 +20,7 @@ function getPullRequestNumber(url) {
   return '';
 }
 
-async function postMessage(prNumber, message) {
+async function postMessage(prNumber: string, message: string): Promise<request.RequestPromise> {
   try {
     const endpoint = `repos/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/issues/${prNumber}/comments`;
 
